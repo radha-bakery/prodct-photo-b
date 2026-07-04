@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Photo BG Remove Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <h1>Product Photo Tool</h1>
+        <p>Background remove → White background → 400×400 JPG → 190KB ke andar</p>
+      </div>
+      <span class="badge">GitHub Pages Free</span>
+    </header>
+
+    <section class="card upload" id="dropZone">
+      <input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp,image/jpg" hidden />
+      <button id="chooseBtn" class="primary">📷 Photo Select Karo</button>
+      <p>JPG, PNG, WEBP supported • Drag & Drop bhi chalega</p>
+    </section>
+
+    <section class="controls card">
+      <button id="processBtn" class="primary big" disabled>Remove BG + White BG + Resize</button>
+      <button id="downloadBtn" class="secondary big" disabled>Download JPG</button>
+      <p id="status">Photo select karo.</p>
+      <div class="bar"><div id="barFill"></div></div>
+    </section>
+
+    <section class="preview">
+      <div class="card pane">
+        <h2>Original</h2>
+        <img id="originalPreview" alt="Original preview" />
+      </div>
+      <div class="card pane">
+        <h2>Final 400×400 JPG</h2>
+        <canvas id="finalCanvas" width="400" height="400"></canvas>
+        <p id="fileInfo"></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>First time model load hone me time lag sakta hai. Internet required for AI model files.</p>
+    </footer>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
